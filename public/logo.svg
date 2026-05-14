@@ -1,0 +1,37 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer lens circle -->
+  <circle cx="32" cy="32" r="28" stroke="url(#gradient1)" stroke-width="3" fill="none"/>
+
+  <!-- Inner lens circle -->
+  <circle cx="32" cy="32" r="20" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.7"/>
+
+  <!-- Lens handle -->
+  <line x1="50" y1="50" x2="60" y2="60" stroke="url(#gradient1)" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Leaf/nutrition symbol inside -->
+  <path d="M32 18C32 18 24 24 24 32C24 40 32 46 32 46C32 46 40 40 40 32C40 24 32 18 32 18Z" fill="url(#gradient2)" opacity="0.9"/>
+
+  <!-- Leaf vein -->
+  <path d="M32 22V42M28 28C30 30 32 32 32 32M36 28C34 30 32 32 32 32M28 36C30 34 32 32 32 32M36 36C34 34 32 32 32 32" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Scanning lines -->
+  <line x1="16" y1="26" x2="22" y2="26" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="16" y1="32" x2="20" y2="32" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="16" y1="38" x2="22" y2="38" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+
+  <line x1="42" y1="26" x2="48" y2="26" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="32" x2="48" y2="32" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="42" y1="38" x2="48" y2="38" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="50%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+</svg>
