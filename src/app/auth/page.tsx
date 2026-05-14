@@ -15,7 +15,7 @@ import {
   CheckCircle2
 } from "lucide-react";
 import Logo from "@/components/Logo";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -88,6 +88,13 @@ export default function AuthPage() {
           return;
         }
 
+        const supabase = getSupabase();
+        if (!supabase) {
+          setError("Database not configured");
+          setLoading(false);
+          return;
+        }
+
         const { data, error: signUpError } = await supabase.auth.signUp({
           email: formData.email,
           password: formData.password,
@@ -101,12 +108,16 @@ export default function AuthPage() {
         if (signUpError) {
           setError(signUpError.message);
         } else if (data.user) {
-          await supabase.from("users").insert({
-            id: data.user.id,
-            email: formData.email,
-            name: formData.name,
-            provider: "email",
-          });
+          try {
+            await supabase.from("users").insert({
+              id: data.user.id,
+              email: formData.email,
+              name: formData.name,
+              provider: "email",
+            });
+          } catch {
+            console.log("User table insert skipped");
+          }
 
           setSuccess("Account created successfully! Please sign in.");
           setIsLogin(true);
