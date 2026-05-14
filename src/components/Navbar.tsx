@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, LogOut, User } from "lucide-react";
+import { Menu, X, LogOut, User, Settings } from "lucide-react";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -86,6 +86,14 @@ export default function Navbar() {
                       <User size={16} />
                       Dashboard
                     </Link>
+                    <Link
+                      href="/profile"
+                      className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
+                      onClick={() => setShowDropdown(false)}
+                    >
+                      <Settings size={16} />
+                      My Profile
+                    </Link>
                     <button
                       onClick={handleSignOut}
                       className="flex items-center gap-2 w-full px-4 py-2 text-red-600 hover:bg-red-50 transition-colors"
@@ -163,6 +171,13 @@ export default function Navbar() {
                       onClick={() => setIsOpen(false)}
                     >
                       Dashboard
+                    </Link>
+                    <Link
+                      href="/profile"
+                      className="px-5 py-2.5 text-teal-600 font-semibold hover:text-teal-700 transition-colors text-left"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      My Profile
                     </Link>
                     <button
                       onClick={handleSignOut}
